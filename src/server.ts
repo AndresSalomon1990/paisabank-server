@@ -5,14 +5,17 @@ import cors from "cors";
 // Internal deps
 import { error } from "./middlewares/error.ts";
 import { notFound } from "./middlewares/not-found.ts";
+import authRouter from "./routes/auth.ts";
 
 const app = express();
 
-// Middlewares
+// Middlewares & routes
 app.use(cors());
 
 app.use(urlencoded({ extended: true }));
 app.use(json());
+
+app.use("/api/auth", authRouter);
 
 app.use(error);
 app.use(notFound);
