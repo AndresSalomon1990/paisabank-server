@@ -9,7 +9,7 @@ import { createUser, login } from "../controllers/auth.ts";
 const authRouter = Router();
 
 /*
-  path: /api/auth
+  path: /paisabank
 */
 
 authRouter.post(

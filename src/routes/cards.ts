@@ -8,9 +8,9 @@ import { getAllCards } from "../controllers/cards.ts";
 const cardsRouter = Router();
 
 /*
-  path: /api/cards
+  path: /paisabank
 */
 
-cardsRouter.get("/", validateToken, getAllCards);
+cardsRouter.get("/cards", validateToken, getAllCards);
 
 export default cardsRouter;

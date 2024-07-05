@@ -17,9 +17,9 @@ app.use(cors());
 app.use(urlencoded({ extended: true }));
 app.use(json());
 
-app.use("/api/auth", authRouter);
-app.use("/api/cards", cardsRouter);
-app.use("/api/transactions", transactionsRouter);
+app.use("/paisabank", authRouter);
+app.use("/paisabank", cardsRouter);
+app.use("/paisabank/movements", transactionsRouter);
 
 app.use(error);
 app.use(notFound);

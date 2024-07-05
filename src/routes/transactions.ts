@@ -8,7 +8,7 @@ import { getLastTransactions, getAllTransactions } from "../controllers/transact
 const transactionsRouter = Router();
 
 /*
-  path: /api/transactions
+  path: /paisabank/movements
 */
 
 transactionsRouter.get("/last", validateToken, getLastTransactions);
