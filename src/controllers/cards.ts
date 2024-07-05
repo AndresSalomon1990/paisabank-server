@@ -11,6 +11,7 @@ export const getAllCards = async (req: Request, res: Response) => {
   try {
     const { token } = req.headers;
     const userId = getIdFromToken(token as string);
+
     const cards = await db
       .select()
       .from(CardsTable)

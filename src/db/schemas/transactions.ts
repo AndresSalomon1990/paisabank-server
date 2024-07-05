@@ -14,3 +14,5 @@ export const TransactionsTable = sqliteTable("transactions", {
     .notNull()
     .references(() => UsersTable.id),
 });
+
+export type Transaction = typeof TransactionsTable.$inferSelect;
