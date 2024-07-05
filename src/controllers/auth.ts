@@ -5,7 +5,7 @@ import { eq } from "drizzle-orm";
 
 // Internal deps
 import { db } from "../db/db.ts";
-import { generateToken } from "../lib/generate-token.ts";
+import { generateToken } from "../lib/token.ts";
 import { UsersTable } from "../db/schemas/users.ts";
 
 export const createUser = async (req: Request, res: Response) => {

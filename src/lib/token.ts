@@ -9,3 +9,14 @@ export const generateToken = (userId: number | string) => {
 
   return `${token}-${userId}`;
 };
+
+/**
+ * Extracts the ID from a token.
+ *
+ * @param {string} token - The token from which to extract the ID.
+ * @return {string} The extracted ID.
+ */
+export const getIdFromToken = (token: string) => {
+  const tokenParts = token.split("-");
+  return tokenParts[1];
+};
