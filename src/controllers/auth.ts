@@ -5,6 +5,7 @@ import { eq } from "drizzle-orm";
 
 // Internal deps
 import { db } from "../db/db.ts";
+import { generateToken } from "../lib/generate-token.ts";
 import { UsersTable } from "../db/schemas/users.ts";
 
 export const createUser = async (req: Request, res: Response) => {
@@ -17,7 +18,7 @@ export const createUser = async (req: Request, res: Response) => {
     if (emailExists.length > 0) {
       return res.status(400).json({
         success: false,
-        message: "Email already exists",
+        message: "Bad Request | Email already exists",
       });
     }
 
@@ -39,7 +40,49 @@ export const createUser = async (req: Request, res: Response) => {
     console.error(error);
     res.status(500).json({
       success: false,
-      msg: "500 - Internal Server Error",
+      msg: "Internal Server Error | Failed to create user",
+    });
+  }
+};
+
+export const login = async (req: Request, res: Response) => {
+  try {
+    const { email, password } = req.body;
+
+    // Verify if email exists
+    const user = await db.select().from(UsersTable).where(eq(UsersTable.email, email));
+
+    if (user.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Not Found | Email not found",
+      });
+    }
+
+    // Verify password
+    const validPassword = bcryptjs.compareSync(password, user[0].password);
+    if (!validPassword) {
+      return res.status(400).json({
+        success: false,
+        message: "Bad Request | Invalid password",
+      });
+    }
+
+    // Generate token
+    const token = generateToken();
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        name: user[0].name,
+        token,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      msg: "Internal Server Error | Failed to login",
     });
   }
 };

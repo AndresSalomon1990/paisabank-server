@@ -4,7 +4,7 @@ import { check } from "express-validator";
 
 // Internal deps
 import { validateFields } from "../middlewares/validate-fields.ts";
-import { createUser } from "../controllers/auth.ts";
+import { createUser, login } from "../controllers/auth.ts";
 
 const authRouter = Router();
 
@@ -21,6 +21,16 @@ authRouter.post(
     validateFields,
   ],
   createUser,
+);
+
+authRouter.post(
+  "/login",
+  [
+    check("email", "Email is required").isEmail(),
+    check("password", "Password is required").not().isEmpty(),
+    validateFields,
+  ],
+  login,
 );
 
 export default authRouter;
