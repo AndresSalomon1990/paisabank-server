@@ -2,7 +2,7 @@ CREATE TABLE `cards` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`issuer` text NOT NULL,
 	`name` text NOT NULL,
-	`expiration_date` integer NOT NULL,
+	`expiration_date` text NOT NULL,
 	`last_digits` integer NOT NULL,
 	`user_id` integer NOT NULL,
 	FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action
@@ -13,7 +13,7 @@ CREATE TABLE `transactions` (
 	`title` text NOT NULL,
 	`amount` integer NOT NULL,
 	`transaction_type` text NOT NULL,
-	`date` integer NOT NULL,
+	`date` text NOT NULL,
 	`user_id` integer NOT NULL,
 	FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action
 );

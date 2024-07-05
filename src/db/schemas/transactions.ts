@@ -9,7 +9,7 @@ export const TransactionsTable = sqliteTable("transactions", {
   title: text("title").notNull(),
   amount: integer("amount", { mode: "number" }).notNull(),
   transactionType: text("transaction_type", { enum: ["SUS", "CASH_IN", "CASH_OUT"] }).notNull(),
-  date: integer("date", { mode: "timestamp" }).notNull(),
+  date: text("date").notNull(),
   user_id: integer("user_id", { mode: "number" })
     .notNull()
     .references(() => UsersTable.id),

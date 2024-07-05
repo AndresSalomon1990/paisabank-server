@@ -8,7 +8,7 @@ export const CardsTable = sqliteTable("cards", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
   issuer: text("issuer", { enum: ["VISA", "MASTERCARD"] }).notNull(),
   name: text("name").notNull(),
-  expirationDate: integer("expiration_date", { mode: "timestamp" }).notNull(),
+  expirationDate: text("expiration_date").notNull(),
   lastDigits: integer("last_digits", { mode: "number" }).notNull(),
   balance: integer("last_digits", { mode: "number" }).notNull(),
   currency: text("name", { enum: ["ARS", "USD"] }).notNull(),
