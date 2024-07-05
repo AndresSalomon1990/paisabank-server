@@ -11,7 +11,9 @@
     "lint": "eslint --fix .",
     "format": "prettier --write .",
     "type-check": "tsc --project tsconfig.json --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "generate": "npx drizzle-kit generate",
+    "migrate": "npx drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
