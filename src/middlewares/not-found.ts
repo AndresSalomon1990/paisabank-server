@@ -2,7 +2,7 @@
 import type { Response, Request, NextFunction } from "express";
 
 // Internal deps
-import { CustomError } from "../lib/custom-error.ts";
+import { CustomError } from "../lib/custom-error.js";
 
 export function notFound(_req: Request, _res: Response, next: NextFunction) {
   return next(new CustomError("Route not found", 404));

@@ -15,6 +15,8 @@ export default [
     rules: {
       "import/extensions": [0, "never"],
     },
+  },
+  {
     ignores: [
       "*.css",
       "dist",

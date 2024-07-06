@@ -2,7 +2,7 @@
 import type { NextFunction, Request, Response } from "express";
 
 // Internal deps
-import { CustomError } from "../lib/custom-error.ts";
+import { CustomError } from "../lib/custom-error.js";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const error = (err: CustomError, _req: Request, res: Response, _next: NextFunction) => {

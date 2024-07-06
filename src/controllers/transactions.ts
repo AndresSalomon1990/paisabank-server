@@ -3,9 +3,9 @@ import type { Request, Response } from "express";
 import { and, eq, desc } from "drizzle-orm";
 
 // Internal deps
-import { db } from "../db/db.ts";
-import { TransactionsTable, type Transaction } from "../db/schemas/transactions.ts";
-import { getIdFromToken } from "../lib/token.ts";
+import { db } from "../db/db.js";
+import { TransactionsTable, type Transaction } from "../db/schemas/transactions.js";
+import { getIdFromToken } from "../lib/token.js";
 
 // Get last 5 transactions
 export const getLastTransactions = async (req: Request, res: Response) => {

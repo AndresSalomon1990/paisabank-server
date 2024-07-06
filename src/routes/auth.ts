@@ -3,8 +3,8 @@ import { Router } from "express";
 import { check } from "express-validator";
 
 // Internal deps
-import { validateFields } from "../middlewares/validate-fields.ts";
-import { createUser, login } from "../controllers/auth.ts";
+import { validateFields } from "../middlewares/validate-fields.js";
+import { createUser, login } from "../controllers/auth.js";
 
 const authRouter = Router();
 

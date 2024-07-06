@@ -4,9 +4,9 @@ import bcryptjs from "bcryptjs";
 import { eq } from "drizzle-orm";
 
 // Internal deps
-import { db } from "../db/db.ts";
-import { generateToken } from "../lib/token.ts";
-import { UsersTable } from "../db/schemas/users.ts";
+import { db } from "../db/db.js";
+import { generateToken } from "../lib/token.js";
+import { UsersTable } from "../db/schemas/users.js";
 
 export const createUser = async (req: Request, res: Response) => {
   try {

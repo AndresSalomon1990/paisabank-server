@@ -3,11 +3,11 @@ import express, { urlencoded, json } from "express";
 import cors from "cors";
 
 // Internal deps
-import { error } from "./middlewares/error.ts";
-import { notFound } from "./middlewares/not-found.ts";
-import authRouter from "./routes/auth.ts";
-import cardsRouter from "./routes/cards.ts";
-import transactionsRouter from "./routes/transactions.ts";
+import { error } from "./middlewares/error.js";
+import { notFound } from "./middlewares/not-found.js";
+import authRouter from "./routes/auth.js";
+import cardsRouter from "./routes/cards.js";
+import transactionsRouter from "./routes/transactions.js";
 
 const app = express();
 
