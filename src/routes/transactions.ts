@@ -2,8 +2,8 @@
 import { Router } from "express";
 
 // Internal deps
-import { validateToken } from "../middlewares/validate-token.ts";
-import { getLastTransactions, getAllTransactions } from "../controllers/transactions.ts";
+import { validateToken } from "../middlewares/validate-token.js";
+import { getLastTransactions, getAllTransactions } from "../controllers/transactions.js";
 
 const transactionsRouter = Router();
 

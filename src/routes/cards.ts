@@ -2,8 +2,8 @@
 import { Router } from "express";
 
 // Internal deps
-import { validateToken } from "../middlewares/validate-token.ts";
-import { getAllCards } from "../controllers/cards.ts";
+import { validateToken } from "../middlewares/validate-token.js";
+import { getAllCards } from "../controllers/cards.js";
 
 const cardsRouter = Router();
 

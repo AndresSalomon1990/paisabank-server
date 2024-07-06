@@ -1,12 +1,12 @@
 {
   "name": "paisabank-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "dev": "node --loader=ts-node/esm --env-file=.env --watch src/index.ts",
     "build": "npx tsc",
-    "start": "node --env-file=.env dist/index.js",
+    "start": "node --env-file=.env dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix .",
     "format": "prettier --write .",
@@ -16,9 +16,8 @@
     "migrate": "npx drizzle-kit migrate"
   },
   "keywords": [],
-  "author": "",
+  "author": "Andres Salomon",
   "license": "ISC",
-  "description": "",
   "engines": {
     "node": ">=20.0.0",
     "npm": ">10.0.0"
@@ -37,6 +36,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/webpack": "^5.28.5",
     "drizzle-kit": "^0.22.8",
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",

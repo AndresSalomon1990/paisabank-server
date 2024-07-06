@@ -3,9 +3,9 @@ import type { Request, Response } from "express";
 import { eq } from "drizzle-orm";
 
 // Internal deps
-import { db } from "../db/db.ts";
-import { CardsTable } from "../db/schemas/cards.ts";
-import { getIdFromToken } from "../lib/token.ts";
+import { db } from "../db/db.js";
+import { CardsTable } from "../db/schemas/cards.js";
+import { getIdFromToken } from "../lib/token.js";
 
 export const getAllCards = async (req: Request, res: Response) => {
   try {

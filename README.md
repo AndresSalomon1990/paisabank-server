@@ -6,6 +6,8 @@ It allows creating an user, login in, get cards and transactions.
 
 It uses [Turso](https://turso.tech) as a serverless SQLite database.
 
+**IMPORTANT**: I'm using ESM modules (import/export) instead of CMJ (require, module.export) but this cause a problem with Typescript so I had to add ```js``` extension instead of ```ts``` extension when importing the modules. Check this [discussion](https://github.com/biomejs/biome/issues/2967).
+
 ## File structure
 
 ```

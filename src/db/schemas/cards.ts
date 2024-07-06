@@ -2,7 +2,7 @@
 import { sqliteTable, integer, text } from "drizzle-orm/sqlite-core";
 
 // Internal deps
-import { UsersTable } from "./users.ts";
+import { UsersTable } from "./users.js";
 
 export const CardsTable = sqliteTable("cards", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
