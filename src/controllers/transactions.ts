@@ -4,7 +4,7 @@ import { and, eq, desc } from "drizzle-orm";
 
 // Internal deps
 import { db } from "../db/db.js";
-import { TransactionsTable, type Transaction } from "../db/schemas/transactions.js";
+import { TransactionsTable, type Transaction } from "../db/schema/schema.js";
 import { getIdFromToken } from "../lib/token.js";
 
 // Get last 5 transactions
