@@ -4,7 +4,7 @@ import { eq } from "drizzle-orm";
 
 // Internal deps
 import { db } from "../db/db.js";
-import { CardsTable } from "../db/schemas/cards.js";
+import { CardsTable } from "../db/schema/schema.js";
 import { getIdFromToken } from "../lib/token.js";
 
 export const getAllCards = async (req: Request, res: Response) => {

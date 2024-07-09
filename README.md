@@ -1,12 +1,14 @@
 # PAISABANK - SERVER APP
 
-This is a NodeJs REST API exclusively made for PAISABANK - CLIENT APP (add repo).
+This is a NodeJs REST API exclusively made for [PAISABANK - CLIENT APP](https://github.com/AndresSalomon1990/paisabank-client).
 
-It allows creating an user, login in, get cards and transactions.
+It allows creating an user, login in, get cards and transactions. It uses a simple auth flow with mocked token.
 
 It uses [Turso](https://turso.tech) as a serverless SQLite database.
 
-**IMPORTANT**: I'm using ESM modules (import/export) instead of CMJ (require, module.export) but this cause a problem with Typescript so I had to add `js` extension instead of `ts` extension when importing the modules. Check this [discussion](https://github.com/biomejs/biome/issues/2967).
+**IMPORTANT**: I'm using ESM modules (import/export) instead of CMJ (require, module.export) but this cause a problem with Typescript(`module=NodeNext` in the tsconfig file) so I had to add `js` extension instead of `ts` extension when importing the modules. Check this [discussion](https://github.com/biomejs/biome/issues/2967). Another solution would be to install a module bundler and transpiler like Webpack or try a different configuration.
+
+**DISCLAIMER**: This is not a project ready for production. It's only for educational purposes.
 
 ## File structure
 

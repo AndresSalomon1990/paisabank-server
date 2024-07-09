@@ -4,6 +4,8 @@ CREATE TABLE `cards` (
 	`name` text NOT NULL,
 	`expiration_date` text NOT NULL,
 	`last_digits` integer NOT NULL,
+	`balance` integer NOT NULL,
+	`currency` text NOT NULL,
 	`user_id` integer NOT NULL,
 	FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action
 );
